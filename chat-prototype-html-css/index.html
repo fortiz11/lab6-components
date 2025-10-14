@@ -10,21 +10,27 @@
     <main class="chat-interface">
         <header>
             <h1>Chat Assistant</h1>
-            <h3>Prototype: Pure HTML/CSS (Static)</h3>
+            <h6 class="sub-title">Prototype: Pure HTML/CSS (Static)</h6>
         </header>
         <section class="messages">
-            <div class="message bot">
+            <div class="message-bot">
                 <div class="bubble">Hello! I'm here to chat with you. How can I help you today?</div>
             </div>
             <div class="user">
                 <div class="bubble">Hi there! What can you do?</div>
             </div>
-            <div class="message bot">
+            <div class="message-bot">
                 <div class="bubble">I can chat with you about various topics. Try asking me a question or
                     or just say hello!</div>
                 </div>
             <div class="user">
                 <div class="bubble">How does this work?</div>
+            </div>
+            <div class="message-bot">
+                <div class="bubble">
+                    That's a great question!In this version, I'm just static text styled with HTML
+                    and CSS.
+                </div>
             </div>
         </section>
 
@@ -32,10 +38,12 @@
             <input type="text" placeholder="Type your message..." disabled>
             <button type="submit" disabled>Send</button>
         </form>
-
-        
-
-
+        <footer class="info">
+            <p>
+                ℹ️ This is a static HTML/CSS demonstration. The input is disabled. See other approaches for
+                interactive versions. 
+            </p>
+        </footer>
     </main>
 </body>
 </html>

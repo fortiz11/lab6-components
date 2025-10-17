@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 6 - Component Approaches</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1 id="title">Chat Component</h1>
+      <p>Prototype + Three Approaches to Component-Based Thinking</p>
+    </header>
+
+    <section class="grid">
+      <!-- Prototype -->
+      <article class="card">
+        <span class="badge">Prototype</span>
+        <h2>Pure HTML &amp; CSS</h2>
+        <p class="lede">A static mockup using only HTML and CSS to work out the interface design.</p>
+        <ul class="bullets" aria-label="Highlights">
+          <li><span class="check">✔</span> No dependencies</li>
+          <li><span class="check">✔</span> Always accessible</li>
+          <li><span class="check">✔</span> Simple to understand</li>
+          <li><span class="check">✔</span> No interactivity</li>
+        </ul>
+        <div class="actions">
+          <a class="demo" href="chat-prototype-html-css/index.html">View Demo →</a>
+        </div>
+      </article>
+
+      <!-- Approach 1 -->
+      <article class="card">
+        <span class="badge approach1">Approach 1</span>
+        <h2>DOM Manipulation</h2>
+        <p class="lede">Interactive chat using vanilla JavaScript and standard DOM methods.</p>
+        <ul class="bullets">
+          <li><span class="check">✔</span> Full interactivity</li>
+          <li><span class="check">✔</span> Eliza-style bot</li>
+          <li><span class="check">✔</span> Standard JavaScript</li>
+          <li><span class="check">✔</span> No encapsulation</li>
+        </ul>
+        <div class="actions">
+          <a class="demo" href="chat-dom/index.html">View Demo →</a>
+        </div>
+      </article>
+
+      <!-- Approach 2 -->
+      <article class="card">
+        <span class="badge approach2">Approach 2</span>
+        <h2>Progressive Enhancement</h2>
+        <p class="lede">Custom element that enhances existing HTML markup with JavaScript.</p>
+        <ul class="bullets">
+          <li><span class="check">✔</span> Graceful degradation</li>
+          <li><span class="check">✔</span> Semantic base HTML</li>
+          <li><span class="check">✔</span> Web Components API</li>
+          <li><span class="check">✔</span> Global styles</li>
+        </ul>
+        <div class="actions">
+          <a class="demo" href="chat-webcomponent-pe/index.html">View Demo →</a>
+        </div>
+      </article>
+
+      <!-- Approach 3 -->
+      <article class="card">
+        <span class="badge approach3">Approach 3</span>
+        <h2>Web Component</h2>
+        <p class="lede">Fully encapsulated custom element with Shadow DOM and internal styles.</p>
+        <ul class="bullets">
+          <li><span class="check">✔</span> Complete encapsulation</li>
+          <li><span class="check">✔</span> Shadow DOM</li>
+          <li><span class="check">✔</span> Self-contained</li>
+          <li><span class="check">✔</span> Highly reusable</li>
+        </ul>
+        <div class="actions">
+          <a class="demo" href="chat-webcomponent-gd/index.html">View Demo →</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      COMP 305 &middot; Fall 2025 — Prof Powell
+    </footer>
+  </main>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Prototype(Pure HTML &CSS)</title>
+    <title>Chat-Progressive Enhancement </title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="chat-component.js" defer></script>
     </head>
@@ -12,13 +12,14 @@
     <main class="chat-interface">
         <header class="chat-header">
             <h1>Chat Assistant</h1>
-            <h6 class="sub-title"></h6>
+            <h6 class="sub-title">Approach 2: Web Component(Progressive Enhancement)</h6>
         </header>
+    <!--Custom element added here for progressive enhancement-->
 <simple-chat class="chat-interface">
     <section class="messages">
         <div class="message-bot">
             <div class="bubble">
-                Hello I'm your chat assistant!
+                Hello how can I help you?
             </div>
         </div>
     </section>

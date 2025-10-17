@@ -1,13 +1,12 @@
-import { getBotResponse } from '../eliza.js';
+import { getBotResponse } from "../eliza.js";
 
 class ChatInterface extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        :host {
+    this.shadowRoot.innerHTML = ` <style>
+:host {
   --panel: #ffffff;
   --bot: #e5e7eb;
   --user:  rgb(31, 146, 247);
@@ -33,13 +32,17 @@ class ChatInterface extends HTMLElement {
   background: var(--user);
   color: #fff;
   text-align: center;
-  padding: 40px;
+  padding: 50px;
 }
 .chat-header h1 {
   margin: 0;                     
-  font-size: 1.25rem;         
+  font-size: 2rem;         
 }
-.sub-title { font-size: .85rem; opacity: .85; margin-top: 4px; }
+.sub-title { 
+font-size: .9rem; 
+opacity: .85; 
+margin-top: 20px; 
+}
 
 
 .messages {
@@ -51,10 +54,21 @@ class ChatInterface extends HTMLElement {
   gap: 12px;
 }
 
-/* bubble rows */
-.message { display:flex; align-items:flex-end; width:100%; }
-.message-bot { display:flex; justify-content:flex-start; width:100%; }
-.user { display:flex; justify-content:flex-end; width:100%; }
+.message {
+display:flex;
+ align-items:flex-end; 
+ width:100%;
+  }
+.message-bot { 
+display:flex; 
+justify-content:flex-start; width:100%; 
+}
+
+.user { 
+display:flex; 
+justify-content:flex-end; 
+width:100%; 
+}
 
 .bubble {
   max-width: 70%;
@@ -65,21 +79,29 @@ class ChatInterface extends HTMLElement {
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
-.message-bot .bubble { background-color: var(--bot); color: var(--text); border-bottom-left-radius: 4px; }
-.user .bubble        { background: var(--user); color: #fff; border-bottom-right-radius: 4px; }
+.message-bot .bubble { 
+background-color: var(--bot); 
+color: var(--text); 
+border-bottom-left-radius: 4px; 
+}
+.user .bubble        
+{ background: var(--user); 
+ color: #fff; 
+ border-bottom-right-radius: 4px;
+  }
 
 .input {
   display:flex;
   gap: 10px;
   padding: 12px 16px;
   background-color: #fff;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid rgb(189, 186, 186);
   font-size: .95rem;
 }
 .input input {
   flex: 1;
   padding: 12px;
-  border: 1px solid lightgrey;
+  border: 1px solid rgb(189, 186, 186);
   border-radius: 20px;
   font-size: .95rem;
 }
@@ -122,17 +144,17 @@ class ChatInterface extends HTMLElement {
   }
 
   connectedCallback() {
-    this.$messages = this.shadowRoot.querySelector('.messages');
-    this.$form     = this.shadowRoot.querySelector('form.input');
-    this.$input    = this.shadowRoot.querySelector('.user-input');
+    this.$messages = this.shadowRoot.querySelector(".messages");
+    this.$form = this.shadowRoot.querySelector("form.input");
+    this.$input = this.shadowRoot.querySelector(".user-input");
 
-    this.$form.addEventListener('submit', (e) => {
+    this.$form.addEventListener("submit", (e) => {
       e.preventDefault();
       this.sendMessage();
     });
 
-    this.$input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !e.shiftKey) {
+    this.$input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         this.sendMessage();
       }
@@ -142,11 +164,11 @@ class ChatInterface extends HTMLElement {
   }
 
   addMessage(text, isUser = false) {
-    const row = document.createElement('div');
-    row.className = isUser ? 'user' : 'message-bot';
+    const row = document.createElement("div");
+    row.className = isUser ? "user" : "message-bot";
 
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
     bubble.textContent = text;
 
     row.appendChild(bubble);
@@ -159,7 +181,7 @@ class ChatInterface extends HTMLElement {
     if (!text) return;
 
     this.addMessage(text, true);
-    this.$input.value = '';
+    this.$input.value = "";
     this.$input.focus();
 
     setTimeout(() => {
@@ -169,4 +191,4 @@ class ChatInterface extends HTMLElement {
   }
 }
 
-customElements.define('chat-interface', ChatInterface);
+customElements.define("chat-interface", ChatInterface);

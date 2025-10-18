@@ -3,8 +3,10 @@ import { getBotResponse } from "../eliza.js";
 class ChatInterface extends HTMLElement {
   constructor() {
     super();
+    /*Creates a private DOM tree*/
     this.attachShadow({ mode: "open" });
-
+    /* everything below lives in the shadow root which 
+   isolates everything from the document  */
     this.shadowRoot.innerHTML = ` <style>
 :host {
   --panel: #ffffff;
@@ -162,7 +164,7 @@ border-bottom-left-radius: 4px;
 
     this.addMessage("Chat ready — type something!", false);
   }
-
+  /* creates and appends message bubble to message area */
   addMessage(text, isUser = false) {
     const row = document.createElement("div");
     row.className = isUser ? "user" : "message-bot";
@@ -175,7 +177,7 @@ border-bottom-left-radius: 4px;
     this.$messages.appendChild(row);
     this.$messages.scrollTop = this.$messages.scrollHeight;
   }
-
+  /*Handles user input and bot response */
   sendMessage() {
     const text = this.$input.value.trim();
     if (!text) return;

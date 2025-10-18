@@ -1,0 +1,36 @@
+:root{
+  --mainbg:rgb(134, 95, 240);
+  --bg1:rgb(100, 103, 242); 
+  --bg2:rgb(59, 130, 246); 
+  --bg3:rgb(37, 99, 235);
+  --card:white;
+   --text:black; 
+   --subtext:lightgrey; 
+   --line:rgb(226, 232, 240);
+  --accent:rgb(37, 99, 235); 
+  --checks:rgb(16, 185, 129); 
+  --radius:16px;
+}
+
+* {
+     box-sizing:border-box;
+ }
+html,body { 
+    height: 120%; 
+    margin:0; }
+
+body{
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink);
+  background: var(--mainbg);
+  display:flex; align-items:center; justify-content:center; padding:32px;
+}
+
+.wrap{
+  width:min(1100px, 95vw);
+  background:var(--card);
+  border-radius:24px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  padding:40px 32px 24px;
+}
+

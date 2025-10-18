@@ -1,0 +1,37 @@
+# OS / System files
+.DS_Store
+Thumbs.db
+
+# Node / package managers (in case you install tools later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings and local config
+.vscode/
+*.code-workspace
+
+# Build artifacts or temp files
+dist/
+build/
+*.log
+*.tmp
+
+# Environment files
+.env
+.env.*
+
+# macOS metadata
+._*
+.Spotlight-V100
+.Trashes
+
+# GitHub Pages cache files
+_site/
+.cache/
+
+# Other common temp / editor files
+*.swp
+*.bak
+*.old
